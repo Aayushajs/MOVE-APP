@@ -13,7 +13,7 @@
 
   MOVE-APP is a fully responsive restaurant website, <br />Responsive for all devices, build using React,  SCSS, and vite.
 
-  <a href=" "><strong>➥ Live Demo</strong></a>
+  <a href="https://moveapp20.netlify.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
