@@ -1,33 +1,71 @@
 {
-    "name": "movix",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview"
+  "name": "movix",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron.mjs",
+  "description": "Hospital Management Dashboard",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dist": "electron-builder --win --x64",
+    "electron": "electron electron.mjs"
+  },
+  "build": {
+    "appId": "com.moviex.app",
+    "productName": "MovieX App",
+    "directories": {
+      "output": "dist"
     },
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.9.1",
-        "axios": "^1.2.2",
-        "dayjs": "^1.11.7",
-        "react": "^18.2.0",
-        "react-circular-progressbar": "^2.1.0",
-        "react-dom": "^18.2.0",
-        "react-icons": "^4.7.1",
-        "react-infinite-scroll-component": "^6.1.0",
-        "react-lazy-load-image-component": "^1.5.6",
-        "react-player": "^2.11.0",
-        "react-redux": "^8.0.5",
-        "react-router-dom": "^6.6.2",
-        "react-select": "^5.7.0",
-        "sass": "^1.57.1"
+    "files": [
+      "electron.mjs"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
-    "devDependencies": {
-        "@types/react": "^18.0.26",
-        "@types/react-dom": "^18.0.9",
-        "@vitejs/plugin-react": "^3.0.0",
-        "vite": "^4.0.0"
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "extraMetadata": {
+      "main": "electron.mjs"
     }
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "axios": "^1.2.2",
+    "dayjs": "^1.11.7",
+    "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-player": "^2.11.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.2",
+    "react-select": "^5.7.0",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "electron": "^37.2.1",
+    "electron-builder": "^26.0.12",
+    "vite": "^4.0.0"
+  }
 }
